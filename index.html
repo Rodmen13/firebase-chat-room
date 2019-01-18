@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chat Room</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDALn2LPX_dna12LQoljgKLlNr7FLGpQOg",
+            authDomain: "react-native-firebase-mo-22dc3.firebaseapp.com",
+            databaseURL: "https://react-native-firebase-mo-22dc3.firebaseio.com",
+            projectId: "react-native-firebase-mo-22dc3",
+            storageBucket: "react-native-firebase-mo-22dc3.appspot.com",
+            messagingSenderId: "919264021539"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/chat.js" defer></script> 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+
+<body>
+    <h1>Firebase Realtime Chat</h1>
+
+    <p>Pick a room:
+        <select></select>
+        <a href="#logout">log out</a>
+    </p>
+    <ul class="chatbox"></ul>
+    <form id="chatForm">
+        Message<input type="text" size="8" name="message" /><br/>
+        <button type="submit">Send</button>
+        <a href="#leave">leave room</a>
+    </form>
+    <p class="result"></p>
+    <p data-target="demo-links"></p>
+    <div id="login-layer">
+        <button id="github-login">Log in with GitHub</button>
+        <button id="google-login">Log in with Google</button>
+    </div>
+    <form id="joinForm">
+        <input type="text" placeholder="Your name..." /><button type="submit">Join Now</button>
+    </form> 
+</body>
+</html>
