@@ -25,6 +25,7 @@
         firebase.initializeApp(config);
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.js"></script>
     <!-- Custom JS -->
     <script src="js/chat.js" defer></script> 
     <!-- Custom CSS -->
@@ -32,26 +33,36 @@
 </head>
 
 <body>
-    <h1>Firebase Realtime Chat</h1>
+    <main id="main">
+        <h1 id="title">{{title}}</h1>
 
-    <p>Pick a room:
-        <select></select>
-        <a href="#logout">log out</a>
-    </p>
-    <ul class="chatbox"></ul>
-    <form id="chatForm">
-        Message<input type="text" size="8" name="message" /><br/>
-        <button type="submit">Send</button>
-        <a href="#leave">leave room</a>
-    </form>
-    <p class="result"></p>
-    <p data-target="demo-links"></p>
-    <div id="login-layer">
-        <button id="github-login">Log in with GitHub</button>
-        <button id="google-login">Log in with Google</button>
-    </div>
-    <form id="joinForm">
-        <input type="text" placeholder="Your name..." /><button type="submit">Join Now</button>
-    </form> 
+        <p id="select_room">Pick a room:
+            <select></select>
+            <a href="#logout">log out</a>
+        </p>
+        <ul class="chatbox"></ul>
+        <form id="chatForm">
+            Message<input type="text" size="8" name="message" /><br/>
+            <button type="submit">Send</button>
+            <a href="#leave">leave room</a>
+        </form>
+        <p class="result"></p>
+        <p data-target="demo-links"></p>
+        <div id="login-layer">
+            <button id="github-login">Log in with GitHub</button>
+            <button id="google-login">Log in with Google</button>
+        </div>
+        <form id="joinForm">
+            <input type="text" placeholder="Your name..." /><button type="submit">Join Now</button>
+        </form> 
+    </main>
+    <script>
+        var app=new Vue({
+            el:document.getElementById('main'),
+            data:{
+                title:'FireBase Chat Room'   
+            }
+        })
+    </script>
 </body>
 </html>

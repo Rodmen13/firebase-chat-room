@@ -30,7 +30,8 @@ function runExample(demoUrl) {
     var uid = null, room = null, submitted = false, sub = null, members = {}, userName;
     var ref;
     var $join = $('#joinForm');
-    
+    $('#select_room').hide();  
+    $('ul.chatbox').hide(); 
     // handle input and form events
     $('#chatForm').submit(processForm);
     // $inp.on('keyup', _.debounce(countChars, 50));

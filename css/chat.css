@@ -20,7 +20,7 @@ p.result.note {
 p.result.error {
     color: red;
 }
-input[name="data"] {
+input[name="message"] {
     width: 200px;
 }
 input[name="user"] {
@@ -31,7 +31,7 @@ input {
     line-height: 16px;
 }
 #login-layer {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     bottom: 0;
